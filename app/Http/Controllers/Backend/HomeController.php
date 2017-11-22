@@ -374,6 +374,24 @@ class HomeController extends BackendController
     	return view('backend.home.speaker._my-ticket');
     }
 
+    /**
+    * Profile
+    */
+    public function edit(Request $request)
+    {
+        $user = $request->user();
+
+        return view('backend.home.edit', compact('user'));
+    }
+    public function update(Requests\AccountUpdateRequest $request)
+    {
+        $user = $request->user();
+
+        $user->update($request->all());
+
+        return redirect()->back()->with("message","Acount was update successfully!");
+    } 
+
 
 
 }
