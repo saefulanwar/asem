@@ -79,7 +79,7 @@ class PostController extends BackendController
 
     public function store(Requests\PostRequest $request)
     {
-        $data = $this->handleRequest($request);
+        $fileName = $this->handleRequest($request);
 
         $posts = new Post;
         $posts->id = Uuid::generate(4);
@@ -89,7 +89,7 @@ class PostController extends BackendController
         $posts->post_type_id = $request->post_type_id;
         $posts->body = $request->body;
         $posts->author_id = $request->user()->id;
-        $posts->image = $data;
+        $posts->image = $fileName;
         $posts->published_at = $request->published_at;
 
         $posts->save();
@@ -121,10 +121,9 @@ class PostController extends BackendController
                     ->save($destination . '/' . $thumbnail);
             }
 
-            $data['image'] = $fileName;
         }
 
-        return $data;
+        return $fileName;
     }
 
     /**
