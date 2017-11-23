@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default navbar-fixed-top">
+<nav class="navbar navbar-default navbar-fixed-top" style="height:60px;">
             <div class="container">
                 <div class="navbar-header">
 
@@ -12,24 +12,25 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="<?php echo e(url('/')); ?>">
-                        <?php echo e(config('app.name', 'Laravel')); ?>
-
+                        <img src="../images/logo.png" height="50px" style="margin-top:-8px;">
                     </a>
                 </div>
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
-                        <li><a href="#">Posts</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="<?php echo e(url('/')); ?>"><i class="fa fa-home"></i></a></li>
+                        <li><a href="/posts/background">Background</a></li>
+                        <li><a href="/posts/venue">Venue</a></li>
+                        <li><a href="/posts/speaker">Speaker</a></li>
+                        <li><a href="/posts/topics">Topics</a></li>
+                        <li><a href="/posts/event">Event</a></li>
+                        <li><a href="/posts/scheduled">Scheduled</a></li>
+                        <li><a href="/posts/organization">Organization</a></li>
+                        <li><a href="/posts/contact">Contact</a></li>
+
                     </ul>
-                    <form action="#" class="navbar-form navbar-left">
-                        <div class="form-group">
-                          <input type="" name="" class="form-control" placeholder="Search">      
-                        </div>
-                        <button class="btn btn-default">Submit</button>
-                    </form>
+                    
 
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
@@ -63,3 +64,4 @@
                 </div>
             </div>
         </nav>
+

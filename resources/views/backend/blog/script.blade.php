@@ -13,8 +13,16 @@
             slugInput.val(theSlug);
         });
 
-        var simplemde1 = new SimpleMDE({ element: $("#excerpt")[0] });
-        var simplemde2 = new SimpleMDE({ element: $("#body")[0] });
+        // var simplemde1 = new SimpleMDE({ element: $("#excerpt")[0] });
+        // var simplemde2 = new SimpleMDE({ element: $("#body")[0] });
+        var options = {
+            filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
+            filebrowserImageUploadUrl: '/laravel-filemanager/upload?type=Images&_token=',
+            filebrowserBrowseUrl: '/laravel-filemanager?type=Files',
+            filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token='
+          };
+          
+        $('textarea').ckeditor(options);
 
         $('#datetimepicker1').datetimepicker({
             format: 'YYYY-MM-DD HH:mm:ss',

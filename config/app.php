@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'ISPHE 2018'),
 
     /*
     |--------------------------------------------------------------------------
@@ -179,6 +179,7 @@ return [
         Collective\Html\HtmlServiceProvider::class,
         GrahamCampbell\Markdown\MarkdownServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
+        Unisharp\Ckeditor\ServiceProvider::class,
     ],
 
     /*

@@ -102,7 +102,7 @@
             <div class="form-group <?php echo e($errors->has('image') ? 'has-error' : ''); ?>">
                 <div class="fileinput fileinput-new" data-provides="fileinput">
                   <div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
-                   
+                    <img src="<?php echo e(($post->image_thumb_url) ? $post->image_thumb_url : 'http://placehold.it/200x150&text=No+Image'); ?>" alt="...">
                   </div>
                   <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;"></div>
                   <div>

@@ -57,6 +57,8 @@
 <script src="/backend/js/app.min.js"></script>
 <script src="/backend/js/jquery.steps.js"></script>
 <script src="/backend/js/custom.js"></script>
+<script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
+<script src="/vendor/unisharp/laravel-ckeditor/adapters/jquery.js"></script>
 @yield('script')
 </body>
 </html>

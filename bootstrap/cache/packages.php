@@ -65,4 +65,16 @@
       'Image' => 'Intervention\\Image\\Facades\\Image',
     ),
   ),
+  'unisharp/laravel-filemanager' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Unisharp\\Laravelfilemanager\\LaravelFilemanagerServiceProvider',
+      1 => 'Intervention\\Image\\ImageServiceProvider',
+    ),
+    'aliases' => 
+    array (
+      'Image' => 'Intervention\\Image\\Facades\\Image',
+    ),
+  ),
 );

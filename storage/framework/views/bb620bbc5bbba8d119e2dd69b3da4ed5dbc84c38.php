@@ -8,7 +8,9 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
 
-    <title><?php echo e(config('app.name', 'Laravel')); ?></title>
+    <title> 
+    International Seminar on Public Health and Education 2018
+    </title>
 
     <!-- Styles -->
     <link href="<?php echo e(asset('css/app.css')); ?>" rel="stylesheet">
@@ -18,7 +20,10 @@
 </head>
 <body>
     <div id="app">
-        <?php echo $__env->make('includes.frontend.navbar', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+        <?php $__currentLoopData = $posts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $post): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+            <?php echo $__env->make('includes.frontend.navbar', compact('post'), array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>  
+        <div class="line-bottom" style="height: 65px; background-color: #57a212;"></div>  
 
         <?php echo $__env->yieldContent('content'); ?>
 

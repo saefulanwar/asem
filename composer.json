@@ -13,6 +13,8 @@
         "laravel/tinker": "~1.0",
         "laravelcollective/html": "^5.4.0",
         "santigarcor/laratrust": "5.0.*",
+        "unisharp/laravel-ckeditor": "^4.6",
+        "unisharp/laravel-filemanager": "~1.8",
         "webpatser/laravel-uuid": "^3.0"
     },
     "require-dev": {

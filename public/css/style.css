@@ -4,6 +4,17 @@ body {
     background-color: #fff;
 }
 
+.navbar-default .navbar-nav>li>a, .navbar-default .navbar-text {
+    color: #1d1d1c;
+    font-size: 14px;
+    font-weight: 400;
+    margin-top: 8px;
+}
+.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
+    color: #807979;
+    background-color: #ad838300;
+}
+
 .header_wrap{
   position:relative;
   overflow:hidden;
@@ -13,8 +24,8 @@ body {
   align-items: flex-start;
   align-content: flex-start;
   height:50vw;
-  min-height:434px;
-  max-height:399px;
+  min-height:320px;
+  max-height:340px;
   min-width:300px;
   color:#eee;
 }
@@ -56,7 +67,7 @@ body {
 .header_info {
     background-color: rgba(0, 0, 0, 0.3);
     padding: 20px 20px;
-    margin-top: 18%;
+    margin-top: 6%;
 
 }
 
@@ -95,13 +106,15 @@ a:hover, a:focus {
 }
  
 .wl{
-      background: #3097d1;
+      background: #7dbf40;
     color: #fff;
 }
 
 .wp-separator {
-        background-color: #3097d1;
+        background-color: #d8c011;
     color: #fff;
+    font-weight: 600;
+    height: 258px;
 }
 
 .descrip {
@@ -109,9 +122,9 @@ a:hover, a:focus {
     text-align: justify;
 }
 
-.descrip .btn-danger{
-  background-color: transparent;
-  border:2px solid;
+.descrip .btn-danger {
+    background-color: #0f5f77;
+    border: 2px solid;
 }
  
 .c_hr h4{
@@ -125,7 +138,7 @@ a:hover, a:focus {
 }
 
 .footer {
-    background-color: #337AB7;
+    background-color: #cec125;
     color: #EEE;
     padding-top: 30px;
 }
@@ -135,7 +148,7 @@ a:hover, a:focus {
 }
 
 .footer-p {
-    background-color: #2B679A;
+    background-color: #908011;
     color: #EEE;
     padding-top: 20px;
     text-align: center;
@@ -343,6 +356,12 @@ a:hover, a:focus {
 .navbar {
   margin-bottom: 0;
 }
+
+.list-group-item.active, .list-group-item.active:focus, .list-group-item.active:hover {
+    z-index: 2;
+    color: #fff;
+    background-color: #70b133;
+    border-color: #4d7b21;
 
 @media screen and (max-width: 768px) {
 

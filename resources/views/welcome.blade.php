@@ -12,10 +12,10 @@
                  <div class="header_info">
                     <div class="descrip">
                         <a href="#">
-                        <h1 style="color:#ece705; font-weight: bold;     margin-top: 0;">WELCOME</h1>
+                        <h1 style="color:#ece705; font-weight: bold; margin-top: 0;">WELCOME</h1>
                           </a> 
                          <p>
-                           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, omnis doloremque non cum id reprehenderit, quisquam totam aspernatur tempora minima unde aliquid ea culpa sunt.
+                           Let’s welcome ISPHE; the 4th International Seminar on Public Health and Education, Wellbeing Promotion and Technologies: Health, Physical Activity  and Medicine. ISPHE will take place in May 8-9, 2018 held by Universitas Negeri Semarang and co-located with The Wujil Resort & Conventions.
                            </p><br>
                            <div>
                            <p>
@@ -58,137 +58,32 @@
                 </div>
   
       <div id="grid_post" class="row list-group">
- 
+        @foreach($posts as $post)
          <div class="item  col-xs-4 col-lg-4">
             <div class="thumbnail as">
-               <img class="group list-group-image" src="../images/post1.jpeg" alt="" />
+               <img class="group list-group-image" src="../img/{{$post->image}}" alt="" />
                 <div class="caption">
                     <div class="c_hr">
-                    <h4 class="group inner list-group-item-heading"><a href="#}">Post Title</a></h4>
-                         <small> 10 Oktober 2017, 8:25pm</small> | by <a href="#">Admin</a>
+                    <h4 class="group inner list-group-item-heading"><a href="{{ url('posts/'.$post->slug) }}">{{ $post->title }}</a></h4>
+                         <small>{{ date('j F Y, h:ia', strtotime($post->published_at))}}</small> | by <a href="#">{{ $post->author->name }}</a>
 
                      </div>
-                    <p class="group inner list-group-item-text">Post Content</p>
+                    <p class="group inner list-group-item-text">{{ str_limit($post->body, 50) }}</p>
                     <div class="row"></div>
                 </div>
                 
             </div>
         </div>
-     
-     <div class="item  col-xs-4 col-lg-4">
-            <div class="thumbnail as">
-               <img class="group list-group-image" src="../images/post1.jpeg" alt="" />
-                <div class="caption">
-                    <div class="c_hr">
-                    <h4 class="group inner list-group-item-heading"><a href="#}">Post Title</a></h4>
-                         <small> 10 Oktober 2017, 8:25pm</small> | by <a href="#">Admin</a>
-
-                     </div>
-                    <p class="group inner list-group-item-text">Post Content</p>
-                    <div class="row"></div>
-                </div>
-                
-            </div>
-        </div>
-
-        <div class="item  col-xs-4 col-lg-4">
-            <div class="thumbnail as">
-               <img class="group list-group-image" src="../images/post1.jpeg" alt="" />
-                <div class="caption">
-                    <div class="c_hr">
-                    <h4 class="group inner list-group-item-heading"><a href="#}">Post Title</a></h4>
-                         <small> 10 Oktober 2017, 8:25pm</small> | by <a href="#">Admin</a>
-
-                     </div>
-                    <p class="group inner list-group-item-text">Post Content</p>
-                    <div class="row"></div>
-                </div>
-                
-            </div>
-        </div>
-
-        <div class="item  col-xs-4 col-lg-4">
-            <div class="thumbnail as">
-               <img class="group list-group-image" src="../images/post1.jpeg" alt="" />
-                <div class="caption">
-                    <div class="c_hr">
-                    <h4 class="group inner list-group-item-heading"><a href="#}">Post Title</a></h4>
-                         <small> 10 Oktober 2017, 8:25pm</small> | by <a href="#">Admin</a>
-
-                     </div>
-                    <p class="group inner list-group-item-text">Post Content</p>
-                    <div class="row"></div>
-                </div>
-                
-            </div>
-        </div>
-
-        <div class="item  col-xs-4 col-lg-4">
-            <div class="thumbnail as">
-               <img class="group list-group-image" src="../images/post1.jpeg" alt="" />
-                <div class="caption">
-                    <div class="c_hr">
-                    <h4 class="group inner list-group-item-heading"><a href="#}">Post Title</a></h4>
-                         <small> 10 Oktober 2017, 8:25pm</small> | by <a href="#">Admin</a>
-
-                     </div>
-                    <p class="group inner list-group-item-text">Post Content</p>
-                    <div class="row"></div>
-                </div>
-                
-            </div>
-        </div>
-
-        <div class="item  col-xs-4 col-lg-4">
-            <div class="thumbnail as">
-               <img class="group list-group-image" src="../images/post1.jpeg" alt="" />
-                <div class="caption">
-                    <div class="c_hr">
-                    <h4 class="group inner list-group-item-heading"><a href="#}">Post Title</a></h4>
-                         <small> 10 Oktober 2017, 8:25pm</small> | by <a href="#">Admin</a>
-
-                     </div>
-                    <p class="group inner list-group-item-text">Post Content</p>
-                    <div class="row"></div>
-                </div>
-                
-            </div>
-        </div>
+        @endforeach
   </div><!-- end grid -->
 </div>
-
-    <div class="col-md-3">
-           <div class="list-group" style="box-shadow: 0 0px 1px 0px rgba(0, 0, 0, 0.26);">
-          <a href="#" class="list-group-item active">
-          Total 10 Tags <small class="pull-right">Lihat Semua  <i class="fa fa-share "></i> </small></a>
-          <a href="#" class="list-group-item">Laravel<span class="badge badge-primary">10 Posts</span></a>
-          <a href="#" class="list-group-item">PHP<span class="badge badge-primary">10 Posts</span></a>
-         
-        </div>
-
-         <div class="list-group" style="box-shadow: 0 0px 1px 0px rgba(0, 0, 0, 0.26);">
-         
-         <a href="#" class="list-group-item active">Total 2 Kategori <small class="pull-right">Lihat Semua  <i class="fa fa-share "></i> </small> </a>
-         <a href="#" class="list-group-item">Bahasa Pemograman Web<span class="badge badge-primary">6 Posts</span></a>
-         <a href="#" class="list-group-item">Desain Web<span class="badge badge-primary">6 Posts</span></a>
-
-        </div>
-        <div class="ads-img" style="border: 11px solid #eee;">
-          <img src="../images/img-sid.jpeg" style="width: 100%; height: auto;">
-         </div>
-         </div>
+    @include('includes.frontend.sidebar')
     </div><!-- end row -->
 </div>
         </section>
         <!-- FOOTER --> 
          <div class="text-center">
-                <ul class="pagination">
-                  <li><a href="#">1</a></li>
-                  <li class="active"><a href="#">2</a></li>
-                  <li><a href="#">3</a></li>
-                  <li><a href="#">4</a></li>
-                  <li><a href="#">5</a></li>
-                </ul>
+                {{ $posts->render() }}
          </div>
         <!-- END FOOTER --> 
 </div><!-- end con fluid -->

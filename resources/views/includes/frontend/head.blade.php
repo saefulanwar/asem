@@ -8,7 +8,9 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title> 
+    International Seminar on Public Health and Education 2018
+    </title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -18,7 +20,10 @@
 </head>
 <body>
     <div id="app">
-        @include('includes.frontend.navbar')
+        @foreach($posts as $post)
+            @include('includes.frontend.navbar', compact('post'))
+        @endforeach  
+        <div class="line-bottom" style="height: 65px; background-color: #57a212;"></div>  
 
         @yield('content')
 

@@ -19,10 +19,11 @@ Route::group(['middleware' => 'web'], function() {
 	return var_dump(session()->get('checkout'));
 	});
 });
+Route::get('/laravel-filemanager', '\Unisharp\Laravelfilemanager\controllers\LfmController@show');
+Route::post('/laravel-filemanager/upload', '\Unisharp\Laravelfilemanager\controllers\UploadController@upload');
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'Frontend\HomeController@index');
+Route::get('/posts/{id}', 'Frontend\HomeController@postShow');
 
 Auth::routes();
 

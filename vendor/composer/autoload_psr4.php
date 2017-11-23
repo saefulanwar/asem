@@ -10,6 +10,8 @@ return array(
     'XdgBaseDir\\' => array($vendorDir . '/dnoegel/php-xdg-base-dir/src'),
     'Whoops\\' => array($vendorDir . '/filp/whoops/src/Whoops'),
     'Webmozart\\Assert\\' => array($vendorDir . '/webmozart/assert/src'),
+    'Unisharp\\Laravelfilemanager\\' => array($vendorDir . '/unisharp/laravel-filemanager/src'),
+    'Unisharp\\Ckeditor\\' => array($vendorDir . '/unisharp/laravel-ckeditor'),
     'Traitor\\' => array($vendorDir . '/kkszymanowski/traitor/src'),
     'TijsVerkoyen\\CssToInlineStyles\\' => array($vendorDir . '/tijsverkoyen/css-to-inline-styles/src'),
     'Tests\\' => array($baseDir . '/tests'),

@@ -14,7 +14,7 @@ class Post extends Model
 
     protected $table = 'post';
 
-    protected $fillable = ['title', 'slug', 'excerpt', 'body', 'published_at', 'post_type_id', 'image'];
+    protected $fillable = ['title', 'slug', 'excerpt', 'body', 'published_at', 'post_type_id', 'image', 'post_type_id'];
     protected $dates    = ['published_at'];
 
     protected $casts = ['id' => 'string'];

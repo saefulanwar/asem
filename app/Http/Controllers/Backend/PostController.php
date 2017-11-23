@@ -120,10 +120,9 @@ class PostController extends BackendController
                     ->resize($width, $height)
                     ->save($destination . '/' . $thumbnail);
             }
-
+            return $thumbnail;
         }
-
-        return $fileName;
+        
     }
 
     /**
@@ -134,7 +133,9 @@ class PostController extends BackendController
      */
     public function show($id)
     {
-        //
+        $posts = Post::find($id);
+
+        return view('backend.blog.show')->withPosts($posts);
     }
 
     /**
@@ -160,13 +161,42 @@ class PostController extends BackendController
     {
         $post     = Post::findOrFail($id);
         $oldImage = $post->image;
-        $data     = $this->handleRequest($request);
+        $data     = $this->handleUpdateRequest($request);
         $post->update($data);
 
         if ($oldImage !== $post->image) {
             $this->removeImage($oldImage);
         }
         return redirect('/backend/blog')->with('message', 'Your post was updated successfully!');
+    }
+
+    private function handleUpdateRequest($request)
+    {
+        $data = $request->all();
+
+        if ($request->hasFile('image'))
+        {
+            $image       = $request->file('image');
+            $fileName    = $image->getClientOriginalName();
+            $destination = $this->uploadPath;
+
+            $successUploaded = $image->move($destination, $fileName);
+
+            if ($successUploaded)
+            {
+                $width     = config('cms.image.thumbnail.width');
+                $height    = config('cms.image.thumbnail.height');
+                $extension = $image->getClientOriginalExtension();
+                $thumbnail = str_replace(".{$extension}", "_thumb.{$extension}", $fileName);
+
+                Image::make($destination . '/' . $fileName)
+                    ->resize($width, $height)
+                    ->save($destination . '/' . $thumbnail);
+            }
+            $data['image'] = $thumbnail;
+        }
+
+        return $data;
     }
 
     /**

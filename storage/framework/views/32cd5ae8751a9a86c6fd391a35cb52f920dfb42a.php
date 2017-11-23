@@ -42,7 +42,7 @@
                 </td>
                 <td><?php echo e($post->title); ?></td>
                 <td><?php echo e($post->author->name); ?></td>
-                <td><?php echo e($post->category->name); ?></td>
+                <td><?php echo e($post->category->title); ?></td>
                 <td>
                     <abbr title="<?php echo e($post->dateFormatted(true)); ?>"><?php echo e($post->dateFormatted()); ?></abbr> |
                     <?php echo $post->publicationLabel(); ?>
