@@ -105,7 +105,7 @@ class HomeController extends BackendController
                 $extension = $image->getClientOriginalExtension();
                 $thumbnail = str_replace(".{$extension}", "_thumb.{$extension}", $fileName);
 
-                Image::make($destination . '/' . $fileName)
+                Image::make($destination . '/' . $hashFilename)
                     ->resize($width, $height)
                     ->save($destination . '/' . $thumbnail);
             }
