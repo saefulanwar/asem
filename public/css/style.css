@@ -24,8 +24,8 @@ body {
   align-items: flex-start;
   align-content: flex-start;
   height:50vw;
-  min-height:320px;
-  max-height:340px;
+  min-height:310px;
+  max-height:310px;
   min-width:300px;
   color:#eee;
 }
@@ -90,7 +90,7 @@ a:hover, a:focus {
 }
 
 .section {
-    padding: 50px 0;
+    padding: 20px 0;
 }
 
  .kat{
@@ -111,10 +111,18 @@ a:hover, a:focus {
 }
 
 .wp-separator {
-        background-color: #d8c011;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: flex-start;
+    background-color: #d8c011;
     color: #fff;
     font-weight: 600;
-    height: 258px;
+    z-index: 800;
 }
 
 .descrip {

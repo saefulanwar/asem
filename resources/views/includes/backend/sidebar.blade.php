@@ -32,8 +32,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="pages/layout/top-nav.html"><i class="fa fa-circle-o"></i> Deadline Setting</a></li>
-            <li><a href="pages/layout/boxed.html"><i class="fa fa-circle-o"></i> Price List</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Deadline Setting</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Price List</a></li>
             @if (check_user_permissions(request(), "Users@index"))
             <li><a href="{{ route('users.index') }}"><i class="fa fa-users"></i> <span>Users</span></a></li>
             @endif            
@@ -48,10 +48,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="pages/charts/chartjs.html"><i class="fa fa-circle-o"></i> ChartJS</a></li>
-            <li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i> Morris</a></li>
-            <li><a href="pages/charts/flot.html"><i class="fa fa-circle-o"></i> Flot</a></li>
-            <li><a href="pages/charts/inline.html"><i class="fa fa-circle-o"></i> Inline charts</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Payment Pending</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Payment Approved</a></li>
           </ul>
         </li>
         <li class="treeview">
@@ -63,10 +61,11 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="pages/charts/chartjs.html"><i class="fa fa-circle-o"></i> ChartJS</a></li>
-            <li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i> Morris</a></li>
-            <li><a href="pages/charts/flot.html"><i class="fa fa-circle-o"></i> Flot</a></li>
-            <li><a href="pages/charts/inline.html"><i class="fa fa-circle-o"></i> Inline charts</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Abstract Pending</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Abstract Approved</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Papers Pending</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Papers Approved</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Revised Papers</a></li>            
           </ul>
         </li>
         <li class="treeview">
@@ -78,16 +77,21 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="pages/UI/general.html"><i class="fa fa-circle-o"></i> General</a></li>
-            <li><a href="pages/UI/icons.html"><i class="fa fa-circle-o"></i> Icons</a></li>
-            <li><a href="pages/UI/buttons.html"><i class="fa fa-circle-o"></i> Buttons</a></li>
-            <li><a href="pages/UI/sliders.html"><i class="fa fa-circle-o"></i> Sliders</a></li>
-            <li><a href="pages/UI/timeline.html"><i class="fa fa-circle-o"></i> Timeline</a></li>
-            <li><a href="pages/UI/modals.html"><i class="fa fa-circle-o"></i> Modals</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> All Participant</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Paid Participant</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Unpaid Participant</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Change Participant</a></li>
           </ul>
         </li>
+        <li>
+          <a href="#">
+            <i class="fa fa-user"></i> <span>Reviewr</span>
+            <span class="pull-right-container">
+            </span>
+          </a>
+        </li>
        <li>
-          <a href="pages/calendar.html">
+          <a href="#">
             <i class="fa fa-send"></i> <span>Send LoA</span>
             <span class="pull-right-container">
             </span>

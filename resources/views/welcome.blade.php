@@ -8,6 +8,7 @@
   <div class="info">
      <div class="container">
          <div class="row">
+         {{-- <div class="row-carousel" style="margin-top: 8px;"><img src="../img/isphe-bg1.jpg"></div> --}}
             <div class="col-md-7">
                  <div class="header_info">
                     <div class="descrip">
@@ -19,7 +20,7 @@
                            </p><br>
                            <div>
                            <p>
-                            <a href="#" class="btn btn-danger" >Registrasi</a>
+                            <a href="#" class="btn btn-danger" >Registration</a>
                              <a href="#" class="btn btn-danger" >Login</a>
                             </p>
 
@@ -35,9 +36,69 @@
         <section class="wp-separator">
             <article class="section">
                 <div class="container">
-                    <div class="row text-center">
-                        <p class="h1">ACTIVITIES & EVENTS</p>
-                        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum nam numquam voluptates cumque </p>
+                    <div class="row">
+                    {{-- <div class="row-carousel" style="margin-top: -46px;"><img src="../img/isphe-bg1.jpg"> --}}
+                    <div id="myCarousel" class="carousel slide" data-ride="carousel">          
+
+                    <div class="carousel-inner" role="listbox">
+
+                    <ol class="carousel-indicators">
+                      @foreach( $carousels as $carousel )
+                              <li data-target="#carouselExampleIndicators" data-slide-to="{{ $loop->index }}" class="{{ $loop->first ? 'active' : '' }}"></li>
+                      @endforeach
+                    </ol>
+
+                    <div class="carousel-inner" role="listbox">
+                            @foreach( $carousels as $carousel )
+                               <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
+                                   <img class="d-block img-fluid img-responsive col-xs-12" src="../img/{{ $carousel->image }}" alt="{{ $carousel->title }}">
+                               </div>
+                            @endforeach
+                          </div>
+                    </div>
+
+                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                          </a>
+                          <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+
+
+                    {{-- <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" style="margin-top: -18px;">
+             
+                          <ol class="carousel-indicators">
+                           @foreach( $carousels as $carousel )
+                              <li data-target="#carouselExampleIndicators" data-slide-to="{{ $loop->index }}" class="{{ $loop->first ? 'active' : '' }}"></li>
+                           @endforeach
+                          </ol>
+                           <div class="carousel-inner" role="listbox">
+                            @foreach( $carousels as $carousel )
+                               <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
+                                   <img class="d-block img-fluid" src="../img/{{ $carousel->image }}" alt="{{ $carousel->title }}">
+                               </div>
+                            @endforeach
+                          </div>
+                         
+
+                          </div>
+                          <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                          </a>
+                          <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                          </a>
+                        </div> --}}
+                        <!-- End Of Carousel -->
+
+
                     </div>
                 </div>
             </article>
@@ -58,7 +119,7 @@
                 </div>
   
       <div id="grid_post" class="row list-group">
-        @foreach($posts as $post)
+        @foreach($news as $post)
          <div class="item  col-xs-4 col-lg-4">
             <div class="thumbnail as">
                <img class="group list-group-image" src="../img/{{$post->image}}" alt="" />
@@ -68,7 +129,7 @@
                          <small>{{ date('j F Y, h:ia', strtotime($post->published_at))}}</small> | by <a href="#">{{ $post->author->name }}</a>
 
                      </div>
-                    <p class="group inner list-group-item-text">{{ str_limit($post->body, 50) }}</p>
+                    <p class="group inner list-group-item-text">{!! str_limit($post->body, 50) !!}</p>
                     <div class="row"></div>
                 </div>
                 
@@ -83,7 +144,7 @@
         </section>
         <!-- FOOTER --> 
          <div class="text-center">
-                {{ $posts->render() }}
+                {{ $news->render() }}
          </div>
         <!-- END FOOTER --> 
 </div><!-- end con fluid -->

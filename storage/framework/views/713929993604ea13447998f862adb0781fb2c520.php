@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default navbar-fixed-top" style="height:60px;">
+<nav class="navbar navbar-default navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
 
@@ -36,8 +36,8 @@
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
                         <?php if(auth()->guard()->guest()): ?>
-                            <li><a href="<?php echo e(route('login')); ?>">Login</a></li>
-                            <li><a href="<?php echo e(route('register')); ?>">Registrasi</a></li>
+                            
+                            
                         <?php else: ?>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">

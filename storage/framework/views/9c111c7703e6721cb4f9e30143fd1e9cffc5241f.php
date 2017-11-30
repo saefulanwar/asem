@@ -7,6 +7,7 @@
   <div class="info">
      <div class="container">
          <div class="row">
+         
             <div class="col-md-7">
                  <div class="header_info">
                     <div class="descrip">
@@ -18,7 +19,7 @@
                            </p><br>
                            <div>
                            <p>
-                            <a href="#" class="btn btn-danger" >Registrasi</a>
+                            <a href="#" class="btn btn-danger" >Registration</a>
                              <a href="#" class="btn btn-danger" >Login</a>
                             </p>
 
@@ -34,9 +35,44 @@
         <section class="wp-separator">
             <article class="section">
                 <div class="container">
-                    <div class="row text-center">
-                        <p class="h1">ACTIVITIES & EVENTS</p>
-                        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum nam numquam voluptates cumque </p>
+                    <div class="row">
+                    
+                    <div id="myCarousel" class="carousel slide" data-ride="carousel">          
+
+                    <div class="carousel-inner" role="listbox">
+
+                    <ol class="carousel-indicators">
+                      <?php $__currentLoopData = $carousels; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $carousel): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                              <li data-target="#carouselExampleIndicators" data-slide-to="<?php echo e($loop->index); ?>" class="<?php echo e($loop->first ? 'active' : ''); ?>"></li>
+                      <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                    </ol>
+
+                    <div class="carousel-inner" role="listbox">
+                            <?php $__currentLoopData = $carousels; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $carousel): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                               <div class="carousel-item <?php echo e($loop->first ? 'active' : ''); ?>">
+                                   <img class="d-block img-fluid img-responsive col-xs-12" src="../img/<?php echo e($carousel->image); ?>" alt="<?php echo e($carousel->title); ?>">
+                               </div>
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                          </div>
+                    </div>
+
+                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                          </a>
+                          <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+
+
+                    
+                        <!-- End Of Carousel -->
+
+
                     </div>
                 </div>
             </article>
@@ -57,7 +93,7 @@
                 </div>
   
       <div id="grid_post" class="row list-group">
-        <?php $__currentLoopData = $posts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $post): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+        <?php $__currentLoopData = $news; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $post): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
          <div class="item  col-xs-4 col-lg-4">
             <div class="thumbnail as">
                <img class="group list-group-image" src="../img/<?php echo e($post->image); ?>" alt="" />
@@ -67,7 +103,7 @@
                          <small><?php echo e(date('j F Y, h:ia', strtotime($post->published_at))); ?></small> | by <a href="#"><?php echo e($post->author->name); ?></a>
 
                      </div>
-                    <p class="group inner list-group-item-text"><?php echo e(str_limit($post->body, 50)); ?></p>
+                    <p class="group inner list-group-item-text"><?php echo str_limit($post->body, 50); ?></p>
                     <div class="row"></div>
                 </div>
                 
@@ -82,7 +118,7 @@
         </section>
         <!-- FOOTER --> 
          <div class="text-center">
-                <?php echo e($posts->render()); ?>
+                <?php echo e($news->render()); ?>
 
          </div>
         <!-- END FOOTER --> 

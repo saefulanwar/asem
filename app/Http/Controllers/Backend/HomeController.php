@@ -68,7 +68,8 @@ class HomeController extends BackendController
     } 
     public function postPaymentProof(Request $request)
     {
-    	// validate input
+    	// dd($request);
+        // validate input
     	$this->validate($request,[
     		'file' => 'required|max:2040|mimes:jpg,jpeg,png'
     		]);
@@ -109,6 +110,7 @@ class HomeController extends BackendController
                     ->resize($width, $height)
                     ->save($destination . '/' . $thumbnail);
             }
+
         }
 
             return $hashFilename;    	
