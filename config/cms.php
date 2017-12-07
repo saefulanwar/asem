@@ -20,6 +20,9 @@ return [
     'paper' => [
         'directory' => 'img/paper'
     ],
+    'revpaper' => [
+        'directory' => 'file/revpaper'
+    ],
     'revised' => [
         'directory' => 'img/revisedpaper'
     ],

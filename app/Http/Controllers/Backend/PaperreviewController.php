@@ -3,61 +3,46 @@
 namespace App\Http\Controllers\Backend;
 
 use Illuminate\Http\Request;
+use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Models\Paper;
+use App\Models\PaperReview;
+use App\Models\PaperStatus;
+use Uuid;
 
-class PostType extends Controller
-{
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
+class PaperreviewController extends BackendController {
+
+    protected $uploadPath;
+
+    public function __construct() {
+        parent::__construct();
+        $this->paymentPath = public_path(config('cms.revpaper.directory'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+    public function index(Request $request) {
+        $status = $request->get('status', '2');
+        $record = Paper::filterstatus($status)->paginate($this->limit);
+        $recCount = Paper::count();
+        $statusList = PaperStatus::pluck("id", "name");
+        $statusLink = $this->statusLink($statusList);
+        unset($statusList['Pending']);
+        return view("backend.paperreview.index", compact('record', 'recCount', 'statusList', 'statusLink', 'status'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
+    private function statusLink($rec) {
+        $return = array();
+        foreach ($rec as $key => $r) {
+            $return[$r] = array(
+                'name_status' => $key,
+                'count' => Paper::filterstatus($r)->count()
+            );
+        }
+        return $return;
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
+    public function edit($id) {
+        $rec = Paper::findOrFail($id);
+        return view("backend.paperreview.edit", compact('rec'));
     }
 
     /**
@@ -67,19 +52,31 @@ class PostType extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
-        //
+    public function update(Request $request, $id) {
+        $this->validate($request, [
+            'file' => 'required|mimes:pdf,doc,docx',
+            'sugestion' => 'required',
+        ]);
+        $file = $request->file('file');
+        $hashFilename = NULL;
+        if (!empty($file)) {
+            $fileName = $file->getClientOriginalName();
+            $hashFilename = md5($request->user()->id) . '-' . $fileName;
+            $destination = $this->paymentPath;
+            $successUploaded = $file->move($destination, $hashFilename);
+        }
+
+        $newrec = new PaperReview;
+        $newrec->id = Uuid::generate(4);
+        $newrec->sugestion = $request->sugestion;
+        $newrec->paper_id = $id;
+        $newrec->reviewer_id = $request->user()->id;
+        $newrec->paper_revision_file = $hashFilename;
+        $saved = $newrec->save();
+        
+        $rec = Paper::findOrFail($id);
+        $rec->update(array("status_id" => '1'));
+        return redirect()->route("paperreview.index")->with('message', 'Paper review was updated successfully!');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }

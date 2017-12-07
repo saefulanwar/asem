@@ -1,6 +1,6 @@
 @extends('includes.backend.main')
 
-@section('title', 'MyBlog | Edit Post')
+@section('title', 'Paper review')
 
 @section('content')
 
@@ -8,29 +8,29 @@
       <!-- Content Header (Page header) -->
       <section class="content-header">
         <h1>
-          Post
-          <small>Edit post</small>
+          Paper
+          <small>Paper Review</small>
         </h1>
         <ol class="breadcrumb">
           <li>
               <a href="{{ url('/home') }}"><i class="fa fa-dashboard"></i> Dashboard</a>
           </li>
-          <li><a href="{{ route('blog.index') }}">Post</a></li>
-          <li class="active">Edit Post</li>
+          <li><a href="{{ route('paperreview.index') }}">paper</a></li>
+          <li class="active">Paper Review</li>
         </ol>
       </section>
 
       <!-- Main content -->
       <section class="content">
           <div class="row">
-              {!! Form::model($post, [
+              {!! Form::model($rec, [
                   'method' => 'PUT',
-                  'route'  => ['blog.update', $post->id],
+                  'route'  => ['paperreview.update', $rec->id],
                   'files'  => TRUE,
                   'id' => 'post-form'
               ]) !!}
 
-              @include('backend.blog.form')
+              @include('backend.paperreview.form')
 
             {!! Form::close() !!}
           </div>
@@ -40,5 +40,3 @@
     </div>
 
 @endsection
-
-@include('backend.blog.script')
