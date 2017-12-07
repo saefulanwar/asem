@@ -20,8 +20,8 @@
                            </p><br>
                            <div>
                            <p>
-                            <a href="#" class="btn btn-danger" >Registration</a>
-                             <a href="#" class="btn btn-danger" >Login</a>
+                            <a href="register" class="btn btn-danger" >Registration</a>
+                             <a href="login" class="btn btn-danger" >Login</a>
                             </p>
 
                             </div>

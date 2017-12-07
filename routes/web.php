@@ -10,15 +10,6 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::group(['middleware' => 'web'], function() {
-	Route::get('checkout/login', 'CheckoutController@login');
-	Route::post('checkout/login', 'CheckoutController@postLogin');
-	Route::get('checkout/address', 'CheckoutController@address');
-	Route::post('checkout/address', 'CheckoutController@postAddress');
-	Route::get('checkout/payment', function() {
-	return var_dump(session()->get('checkout'));
-	});
-});
 
 Route::get('/', 'Frontend\HomeController@index');
 Route::get('/posts/{id}', 'Frontend\HomeController@postShow');
