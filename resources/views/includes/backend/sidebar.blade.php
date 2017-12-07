@@ -1,13 +1,14 @@
   <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
+    <?php $currentUser = Auth::user() ?>
     <section class="sidebar">
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="{{ asset('adminLte/dist/img/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
+          <img src="{{ $currentUser->gravatar() }}" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Alexander Pierce</p>
+          <p>{{ $currentUser->name }}</p>
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
@@ -32,8 +33,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="pages/layout/top-nav.html"><i class="fa fa-circle-o"></i> Deadline Setting</a></li>
-            <li><a href="pages/layout/boxed.html"><i class="fa fa-circle-o"></i> Price List</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Deadline Setting</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Price List</a></li>
             @if (check_user_permissions(request(), "Users@index"))
             <li><a href="{{ route('users.index') }}"><i class="fa fa-users"></i> <span>Users</span></a></li>
             @endif            
@@ -80,16 +81,23 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="pages/UI/general.html"><i class="fa fa-circle-o"></i> General</a></li>
-            <li><a href="pages/UI/icons.html"><i class="fa fa-circle-o"></i> Icons</a></li>
-            <li><a href="pages/UI/buttons.html"><i class="fa fa-circle-o"></i> Buttons</a></li>
-            <li><a href="pages/UI/sliders.html"><i class="fa fa-circle-o"></i> Sliders</a></li>
-            <li><a href="pages/UI/timeline.html"><i class="fa fa-circle-o"></i> Timeline</a></li>
-            <li><a href="pages/UI/modals.html"><i class="fa fa-circle-o"></i> Modals</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> All Participant</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Paid Participant</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Unpaid Participant</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Change Participant</a></li>
           </ul>
         </li>
+        <li>
+          <a href="#">
+
+            <i class="fa fa-user"></i> <span>Reviewer</span>
+
+            <span class="pull-right-container">
+            </span>
+          </a>
+        </li>
        <li>
-          <a href="pages/calendar.html">
+          <a href="#">
             <i class="fa fa-send"></i> <span>Send LoA</span>
             <span class="pull-right-container">
             </span>

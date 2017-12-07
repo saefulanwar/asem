@@ -1,6 +1,6 @@
 @extends('includes.backend.main')
 
-@section('title', 'MyBlog | Dashboar')
+@section('title', 'ISPHE 2018 | Dashboard')
 
 @section('content')
 

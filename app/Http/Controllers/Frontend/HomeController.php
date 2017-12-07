@@ -10,11 +10,15 @@ class HomeController extends Controller
 {
     public function index()
     {
-    	$posts = Post::with('category')->paginate(6);
+    	$posts = Post::with('category')->get();
 
         $background = Post::where('slug','background')->get();
 
-    	return view('welcome', compact('posts','background'));
+        $carousels = Post::where('slug','carousel')->get();     
+
+        $news= Post::with('category')->where('post_type_id','7956b672-207a-450f-a056-040d9612e497')->paginate(6);   
+
+    	return view('welcome', compact('posts','background','carousels','news'));
     }
     public function postShow($id)
     {

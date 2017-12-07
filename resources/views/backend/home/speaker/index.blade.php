@@ -1,6 +1,6 @@
 @extends('includes.backend.main')
 
-@section('title', 'MyBlog | Dashboar')
+@section('title', 'ISPHE 2018 | Dashboard')
 
 @section('content')
 
@@ -8,10 +8,10 @@
       <!-- Content Header (Page header) -->
       <section class="content-header">
         <h1>
-          Dashboard Participant
+          Dashboard Speaker
         </h1>
         <ol class="breadcrumb">
-          <li class="active"><i class="fa fa-dashboard"></i> Dashboard Participant</li>
+          <li class="active"><i class="fa fa-dashboard"></i> Dashboard Speaker</li>
         </ol>
       </section>
 

@@ -1,6 +1,6 @@
 @extends('includes.backend.main')
 
-@section('title', 'MyBlog | Dashboar')
+@section('title', 'ISPHE 2018 | Dashboard')
 
 @section('content')
 
@@ -22,8 +22,8 @@
               <div class="box">
                 <!-- /.box-header -->
                 <div class="box-body ">
-                      <h3>Welcome to MyBlog!</h3>
-                      <p class="lead text-muted">Hallo {{ Auth::user()->name }}, Welcome to MyBlog</p>
+                      <h3>Welcome to ISPHE 2018</h3>
+                      <p class="lead text-muted">Hallo {{ Auth::user()->name }}, Welcome to ISPHE 2018</p>
 
                       <h4>Get started</h4>
                       
