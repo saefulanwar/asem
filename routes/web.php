@@ -65,7 +65,10 @@ Route::get('/backend/home/uploadRevisedPaper', 'Backend\HomeController@uploadRev
 Route::post('/backend/home/uploadRevisedPaper', 'Backend\HomeController@postRevisedPaperForm');
 Route::get('/backend/home/myTicketSpeaker', 'Backend\HomeController@myTicketSpeaker');
 
-
+//payment Aprroval
+Route::resource('/backend/provepaymentproof', 'Backend\ApprovalpaymentproofController');
+Route::resource('/backend/proveabstract', 'Backend\ApprovalabstractController');
+Route::resource('/backend/paperreview', 'Backend\PaperreviewController');
 
 
 
