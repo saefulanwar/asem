@@ -99,6 +99,7 @@ class HomeController extends BackendController
 
             $successUploaded = $image->move($destination, $hashFilename);
 
+
             if ($successUploaded)
             {
                 $width     = config('cms.payment.thumbnail.width');
@@ -110,6 +111,7 @@ class HomeController extends BackendController
                     ->resize($width, $height)
                     ->save($destination . '/' . $thumbnail);
             }
+
 
         }
 

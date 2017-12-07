@@ -86,7 +86,9 @@
         </li>
         <li>
           <a href="#">
+
             <i class="fa fa-user"></i> <span>Reviewer</span>
+
             <span class="pull-right-container">
             </span>
           </a>
