@@ -33,7 +33,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-circle-o"></i> Deadline Setting</a></li>
+            <li><a href="/backend/deadline"><i class="fa fa-circle-o"></i> Deadline Setting</a></li>
             <li><a href="#"><i class="fa fa-circle-o"></i> Price List</a></li>
             @if (check_user_permissions(request(), "Users@index"))
             <li><a href="{{ route('users.index') }}"><i class="fa fa-users"></i> <span>Users</span></a></li>
