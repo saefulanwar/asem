@@ -13,6 +13,11 @@ class AbstractPaper extends Model
     protected $casts = ['id' => 'string'];
     
     public $incrementing = false;
+    
+    public function participant()
+    {
+    	return $this->belongsTo('App\User','author_id');
+    }
 
     public function status()
     {
@@ -25,5 +30,14 @@ class AbstractPaper extends Model
     public function presentation()
     {
     	return $this->belongsTo('App\Models\Presentation','presentation_id');
+    }
+    public function dateFormatted($showTimes = false){
+        $format = "d/m/Y";
+        if ($showTimes) $format = $format . " H:i:s";
+        return $this->created_at->format($format);
+    }
+    public function scopeFilterstatus($query,$val=""){
+        if(empty($val)) return $query;
+        return $query->where("status_id",$val);
     }
 }

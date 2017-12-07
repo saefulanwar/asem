@@ -26,6 +26,6 @@ return [
     'default_category_id' => 8,
     'default_user_id' => 1,
     'paper_status' => 2,
-    'abstrak_status' => 2,
+    'abstract_status' => 2,
     'payment_status' => 2,
 ];

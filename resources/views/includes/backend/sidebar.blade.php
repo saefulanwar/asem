@@ -49,8 +49,10 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-circle-o"></i> Payment Pending</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> Payment Approved</a></li>
+            <li><a href="{{ route('provepaymentproof.index') }}"><i class="fa fa-circle-o"></i>Approval Paymentproof</a></li>
+            <li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i> Morris</a></li>
+            <li><a href="pages/charts/flot.html"><i class="fa fa-circle-o"></i> Flot</a></li>
+            <li><a href="pages/charts/inline.html"><i class="fa fa-circle-o"></i> Inline charts</a></li>
           </ul>
         </li>
         <li class="treeview">
@@ -62,11 +64,12 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-circle-o"></i> Abstract Pending</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> Abstract Approved</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> Papers Pending</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> Papers Approved</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> Revised Papers</a></li>            
+            <li><a href="{{ route('proveabstract.index') }}"><i class="fa fa-circle-o"></i> Abstract Paper</a></li>
+            <li><a href="{{ route('paperreview.index') }}"><i class="fa fa-circle-o"></i> Paper Reviewer</a></li>
+            <li><a href="pages/charts/chartjs.html"><i class="fa fa-circle-o"></i> ChartJS</a></li>
+            <li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i> Morris</a></li>
+            <li><a href="pages/charts/flot.html"><i class="fa fa-circle-o"></i> Flot</a></li>
+            <li><a href="pages/charts/inline.html"><i class="fa fa-circle-o"></i> Inline charts</a></li>
           </ul>
         </li>
         <li class="treeview">
