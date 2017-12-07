@@ -37,6 +37,11 @@ Route::resource('/backend/users', 'Backend\UsersController');
 Route::get('/backend/edit-account','Backend\HomeController@edit');
 Route::put('/backend/edit-account','Backend\HomeController@update');
 
+/** setting page **/
+Route::resource('/backend/deadline','Backend\DeadlineController');
+Route::resource('/backend/pricelist','Backend\PricelistController');
+
+
 /** Home User By Role **/
 //participants page
 Route::get('/backend/home/participantPage','Backend\HomeController@participantPage');
